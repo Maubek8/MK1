@@ -33,6 +33,10 @@ h1, h2 {
 }
 
 /* Estilo dos botões */
+#control-buttons {
+    margin-top: 100px;
+}
+
 button {
     padding: 10px 20px;
     margin: 5px;
@@ -53,7 +57,7 @@ button:disabled {
 table {
     background-color: #FFFFFF; /* fundo branco */
     border-collapse: collapse;
-    width: 100%;
+    width: 60%;
     margin-top: 20px;
 }
 
@@ -64,6 +68,16 @@ th, td {
     text-align: left;
 }
 
+/* Estilo da área de resultados */
+.results-container {
+    float: right;
+    width: 30%;
+    background-color: #FFFFFF;
+    border: 1px solid #FFC107;
+    padding: 20px;
+    margin-top: 20px;
+}
+
 /* Rodapé */
 footer {
     background-color: #FFEB3B; /* amarelo limão */
@@ -71,14 +85,4 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
-}
-
-/* Área de resultados ao lado da tabela */
-#results {
-    background-color: #FFFFFF;
-    padding: 20px;
-    border: 1px solid #FFC107; /* amarelo âmbar */
-    width: 300px;
-    float: right;
-    margin-top: 20px;
 }
