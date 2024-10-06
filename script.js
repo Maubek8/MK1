@@ -46,15 +46,14 @@ analyzeButton.addEventListener("click", function() {
     clearInterval(timerInterval);
 
     // Coletar os valores da tabela
-    const fcInputs = document.querySelectorAll('input[name="fc"]');
-    const borgInputs = document.querySelectorAll('input[name="borg"]');
-
-    // Exibir os resultados ao lado
+    const phases = ['warmup', 'cad1', 'cad2', 'cad3', 'cad4', 'cooldown'];
     resultsDiv.innerHTML = "<h3>Resultados da Análise</h3><ul>";
-    for (let i = 0; i < fcInputs.length; i++) {
-        const fcValue = fcInputs[i].value || 'N/A';
-        const borgValue = borgInputs[i].value || 'N/A';
-        resultsDiv.innerHTML += `<li>Fase ${i + 1}: FC: ${fcValue}, Borg: ${borgValue}</li>`;
-    }
+
+    phases.forEach(phase => {
+        const fcValue = document.querySelector(`input[name="fc-${phase}"]`).value || 'N/A';
+        const borgValue = document.querySelector(`input[name="borg-${phase}"]`).value || 'N/A';
+        resultsDiv.innerHTML += `<li>${phase.toUpperCase()}: FC: ${fcValue}, Borg: ${borgValue}</li>`;
+    });
+
     resultsDiv.innerHTML += "</ul>";
 });
