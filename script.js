@@ -38,7 +38,19 @@ document.getElementById('analyzeButton').addEventListener('click', function() {
     document.getElementById('printButton').style.display = 'inline-block';
 });
 
-// Função para imprimir
+// Função para mostrar o gráfico em pop-up (você pode implementar a lógica do gráfico aqui)
+function showGraph() {
+    const popUp = document.getElementById('graph-popup');
+    popUp.style.display = 'block';
+}
+
+// Função para fechar o pop-up
+function closeGraph() {
+    const popUp = document.getElementById('graph-popup');
+    popUp.style.display = 'none';
+}
+
+// Adicionar evento de clique no botão de imprimir
 document.getElementById('printButton').addEventListener('click', function() {
     window.print();
 });
