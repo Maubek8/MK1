@@ -1,37 +1,38 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #FFFFFF; /* branco */
-    color: #000000; /* preto */
-    text-align: left;
+    background-color: #FFFFFF; /* fundo branco */
+    color: #000000; /* texto preto */
     margin: 0;
     padding: 0;
 }
 
+/* Cabeçalho */
 header {
     background-color: #FFC107; /* amarelo âmbar */
     padding: 20px;
     text-align: center;
 }
 
+/* Imagem da logo */
 .logo {
     width: 100px;
 }
 
+/* Títulos */
 h1, h2 {
     color: #000000; /* preto */
 }
 
+/* Posicionamento do cronômetro no canto superior esquerdo */
 #timer-container {
     position: absolute;
     top: 20px;
     left: 20px;
-}
-
-#timer {
     font-size: 24px;
     color: #000000; /* preto */
 }
 
+/* Estilo dos botões */
 button {
     padding: 10px 20px;
     margin: 5px;
@@ -42,28 +43,42 @@ button {
     cursor: pointer;
 }
 
+/* Botão desabilitado */
 button:disabled {
-    background-color: #FFC107; /* amarelo âmbar */
+    background-color: #C7A000; /* amarelo escurecido */
     cursor: not-allowed;
 }
 
+/* Estilo da tabela */
 table {
-    background-color: #FFFFFF; /* branco */
+    background-color: #FFFFFF; /* fundo branco */
     border-collapse: collapse;
     width: 100%;
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
+/* Bordas da tabela */
 th, td {
     border: 1px solid #FFC107; /* amarelo âmbar */
     padding: 8px;
     text-align: left;
 }
 
+/* Rodapé */
 footer {
     background-color: #FFEB3B; /* amarelo limão */
     padding: 10px;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+/* Área de resultados ao lado da tabela */
+#results {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border: 1px solid #FFC107; /* amarelo âmbar */
+    width: 300px;
+    float: right;
+    margin-top: 20px;
 }
