@@ -28,17 +28,29 @@ document.getElementById('analyzeButton').addEventListener('click', function() {
         const pse = row.querySelectorAll('input')[1].value || 'N/A';
 
         // Atualiza a tabela do Protocolo MMA
-        document.getElementById(`fc-aquecimento`).value = fc; // Exemplo para Aquecimento
-        document.getElementById(`pse-aquecimento`).value = pse; // Exemplo para Aquecimento
-
-        // Aqui, você pode adicionar lógica para preencher os campos correspondentes nas linhas corretas
+        if (index === 0) { // Aquecimento
+            document.getElementById(`fc-aquecimento`).value = fc;
+            document.getElementById(`pse-aquecimento`).value = pse;
+        } else if (index === 1) { // Incremento 1
+            document.getElementById(`fc-incremento1`).value = fc;
+            document.getElementById(`pse-incremento1`).value = pse;
+        } else if (index === 2) { // Incremento 2
+            document.getElementById(`fc-incremento2`).value = fc;
+            document.getElementById(`pse-incremento2`).value = pse;
+        } else if (index === 3) { // Incremento 3
+            document.getElementById(`fc-incremento3`).value = fc;
+            document.getElementById(`pse-incremento3`).value = pse;
+        } else if (index === 4) { // Resfriamento
+            document.getElementById(`fc-resfriamento`).value = fc;
+            document.getElementById(`pse-resfriamento`).value = pse;
+        }
     });
 
     // Exibir o botão de imprimir
     document.getElementById('printButton').style.display = 'inline-block';
 });
 
-// Função para mostrar o gráfico em pop-up (você pode implementar a lógica do gráfico aqui)
+// Função para mostrar o gráfico em pop-up (implementar lógica aqui)
 function showGraph() {
     const popUp = document.getElementById('graph-popup');
     popUp.style.display = 'block';
