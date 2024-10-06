@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header>
         <img src="assets/logo.png" alt="Logo" class="logo">
         <h1>CARDIOSPORT - Protocolo Preliminar</h1>
@@ -35,55 +34,66 @@
                 <th>Cadência (bpm)</th>
                 <th>FC Anotada</th>
                 <th>PSE Anotada</th>
+                <th>FC Esperada (bpm)</th>
+                <th>PSE Esperada (Escala de Borg)</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>Aquecimento</td>
-                <td>2</td>
-                <td>60</td>
+                <td style="text-align: center;">2</td>
+                <td style="text-align: center;">60</td>
                 <td><input type="number"></td>
                 <td><input type="number"></td>
+                <td>95-115</td>
+                <td>6-10 (Leve)</td>
             </tr>
             <tr>
                 <td>Incremento 1</td>
-                <td>1</td>
-                <td>70</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;">70</td>
                 <td><input type="number"></td>
                 <td><input type="number"></td>
+                <td>115-135</td>
+                <td>11-13 (Moderado)</td>
             </tr>
             <tr>
                 <td>Incremento 2</td>
-                <td>1</td>
-                <td>80</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;">80</td>
                 <td><input type="number"></td>
                 <td><input type="number"></td>
+                <td>135-153</td>
+                <td>13-14 (Algo Difícil)</td>
             </tr>
             <tr>
                 <td>Incremento 3</td>
-                <td>1</td>
-                <td>90</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;">90</td>
                 <td><input type="number"></td>
                 <td><input type="number"></td>
+                <td>153-162</td>
+                <td>15-16 (Difícil)</td>
             </tr>
             <tr>
                 <td>Resfriamento</td>
-                <td>2</td>
-                <td>60</td>
+                <td style="text-align: center;">2</td>
+                <td style="text-align: center;">60</td>
                 <td><input type="number"></td>
                 <td><input type="number"></td>
+                <td>115-135</td>
+                <td>9-10 (Leve)</td>
             </tr>
         </tbody>
     </table>
 
-    <!-- Cronômetro -->
-    <div id="timer-container">
+    <!-- Cronômetro e Botões -->
+    <div id="timer-container" style="text-align: center; margin: 20px;">
         <p id="timer">00:00</p>
         <button id="startButton">Iniciar Protocolo Preliminar</button>
+        <button id="analyzeButton">Analisar</button>
+        <button id="printButton" style="display:none;">Imprimir Protocolo</button>
     </div>
-
-    <!-- Botão para Analisar -->
-    <button id="analyzeButton">Analisar</button>
 
     <!-- Tabela do Protocolo MK - Atleta MMA -->
     <h2>Tabela do Protocolo MK - Atleta MMA</h2>
@@ -94,100 +104,4 @@
                 <th>Tempo (min)</th>
                 <th>Cadência (bpm)</th>
                 <th>FC Anotada</th>
-                <th>PSE Anotada</th>
-                <th>PA (mmHg)</th>
-                <th>VO2 (ml/kg/min)</th>
-                <th>SO2 (%)</th>
-                <th>FEO2 (%)</th>
-                <th>FC Estimada (bpm)</th>
-                <th>PSE (Escala de Borg)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Aquecimento</td>
-                <td>2</td>
-                <td>60</td>
-                <td><input type="number" id="fc-aquecimento"></td>
-                <td><input type="number" id="pse-aquecimento"></td>
-                <td>(PA)</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>95-115</td>
-                <td>6-10 (Leve)</td>
-            </tr>
-            <tr>
-                <td>Incremento 1</td>
-                <td>1</td>
-                <td>70</td>
-                <td><input type="number" id="fc-incremento1"></td>
-                <td><input type="number" id="pse-incremento1"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>115-135</td>
-                <td>11-13 (Moderado)</td>
-            </tr>
-            <tr>
-                <td>Incremento 2</td>
-                <td>1</td>
-                <td>80</td>
-                <td><input type="number" id="fc-incremento2"></td>
-                <td><input type="number" id="pse-incremento2"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>135-153</td>
-                <td>13-14 (Algo Difícil)</td>
-            </tr>
-            <tr>
-                <td>Incremento 3</td>
-                <td>1</td>
-                <td>90</td>
-                <td><input type="number" id="fc-incremento3"></td>
-                <td><input type="number" id="pse-incremento3"></td>
-                <td>(PA)</td>
-                <td></td>
-                <td>(SO2)</td>
-                <td></td>
-                <td>153-162</td>
-                <td>15-16 (Difícil)</td>
-            </tr>
-            <tr>
-                <td>Incremento 4 (Opcional)</td>
-                <td>1</td>
-                <td>100</td>
-                <td><input type="number" id="fc-incremento4"></td>
-                <td><input type="number" id="pse-incremento4"></td>
-                <td></td>
-                <td>(VO2)</td>
-                <td></td>
-                <td>(FEO2)</td>
-                <td>162-172</td>
-                <td>17-18 (Muito Difícil)</td>
-            </tr>
-            <tr>
-                <td>Resfriamento</td>
-                <td>2</td>
-                <td>60</td>
-                <td><input type="number" id="fc-resfriamento"></td>
-                <td><input type="number" id="pse-resfriamento"></td>
-                <td>(PA)</td>
-                <td></td>
-                <td>(SO2)</td>
-                <td></td>
-                <td>115-135</td>
-                <td>9-10 (Leve)</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <!-- Botão para Imprimir -->
-    <button id="printButton" style="display:none;">Imprimir Protocolo</button>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                <th>PSE
