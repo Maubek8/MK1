@@ -19,39 +19,48 @@
             <p id="timer">00:00:00</p>
         </div>
 
-        <!-- Botões para iniciar e pausar, acima da tabela -->
-        <div style="margin-top: 80px;">
+        <!-- Botões para iniciar e pausar -->
+        <div id="control-buttons">
             <button id="startButton">Iniciar Protocolo</button>
             <button id="pauseButton" disabled>Pausar</button>
         </div>
 
-        <!-- Tabela de inserção de dados abaixo dos botões -->
+        <!-- Tabela para inserir dados do protocolo preliminar -->
         <table>
             <tr>
                 <th>Fase</th>
                 <th>Frequência Cardíaca (FC)</th>
                 <th>Percepção de Esforço (Borg)</th>
             </tr>
-            <!-- Linhas da tabela para cada fase -->
             <tr>
-                <td>Warmup</td>
-                <td><input type="number" name="fc" /></td>
-                <td><input type="number" name="borg" /></td>
+                <td>Aquecimento (2 min)</td>
+                <td><input type="number" name="fc-warmup" /></td>
+                <td><input type="number" name="borg-warmup" /></td>
             </tr>
             <tr>
-                <td>Incremento 1</td>
-                <td><input type="number" name="fc" /></td>
-                <td><input type="number" name="borg" /></td>
+                <td>Cadência 1 (60 bpm, 1 min)</td>
+                <td><input type="number" name="fc-cad1" /></td>
+                <td><input type="number" name="borg-cad1" /></td>
             </tr>
             <tr>
-                <td>Incremento 2</td>
-                <td><input type="number" name="fc" /></td>
-                <td><input type="number" name="borg" /></td>
+                <td>Cadência 2 (70 bpm, 1 min)</td>
+                <td><input type="number" name="fc-cad2" /></td>
+                <td><input type="number" name="borg-cad2" /></td>
             </tr>
             <tr>
-                <td>Cooldown</td>
-                <td><input type="number" name="fc" /></td>
-                <td><input type="number" name="borg" /></td>
+                <td>Cadência 3 (80 bpm, 1 min)</td>
+                <td><input type="number" name="fc-cad3" /></td>
+                <td><input type="number" name="borg-cad3" /></td>
+            </tr>
+            <tr>
+                <td>Cadência 4 (90 bpm, 1 min)</td>
+                <td><input type="number" name="fc-cad4" /></td>
+                <td><input type="number" name="borg-cad4" /></td>
+            </tr>
+            <tr>
+                <td>Resfriamento (1-2 min)</td>
+                <td><input type="number" name="fc-cooldown" /></td>
+                <td><input type="number" name="borg-cooldown" /></td>
             </tr>
         </table>
 
@@ -60,9 +69,9 @@
             <button id="analyzeButton" disabled>Analisar</button>
         </div>
 
-        <!-- Resultados da análise ao lado, na área de resultado -->
-        <div id="results" style="margin-top: 20px;">
-            <!-- Aqui os resultados da análise serão exibidos -->
+        <!-- Resultados da análise ao lado -->
+        <div id="results" class="results-container">
+            <!-- Resultados da análise serão exibidos aqui -->
         </div>
 
         <footer>
