@@ -3,81 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protocolo Preliminar - Cordas Navais</title>
+    <title>Protocolo Preliminar - VO2-VT</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h2>A ciência a serviço do esporte</h2>
-            <img src="assets/logo.png" alt="Logo" class="logo">
-            <h1>CARDIOSPORT</h1>
-        </header>
+    <!-- Cabeçalho -->
+    <header>
+        <img src="assets/logo.png" alt="Logo" class="logo">
+        <h1>CARDIOSPORT - Protocolo Preliminar</h1>
+    </header>
 
-        <!-- Cronômetro no canto superior esquerdo -->
-        <div id="timer-container">
-            <p id="timer">00:00:00</p>
-        </div>
+    <!-- Informações do Atleta -->
+    <form id="athlete-info">
+        <label for="name">Nome do Atleta:</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="age">Idade:</label>
+        <input type="number" id="age" name="age">
+        
+        <label for="exam-date">Data do Exame:</label>
+        <input type="date" id="exam-date" name="exam-date">
+    </form>
 
-        <!-- Botões para iniciar e pausar -->
-        <div id="control-buttons">
-            <button id="startButton">Iniciar Protocolo</button>
-            <button id="pauseButton" disabled>Pausar</button>
-        </div>
-
-        <!-- Tabela para inserir dados do protocolo preliminar -->
-        <table>
+    <!-- Tabela Preliminar -->
+    <h2>Tabela Preliminar</h2>
+    <table id="preliminary-table">
+        <thead>
             <tr>
                 <th>Fase</th>
-                <th>Frequência Cardíaca (FC)</th>
-                <th>Percepção de Esforço (Borg)</th>
+                <th>Tempo (min)</th>
+                <th>Cadência (bpm)</th>
+                <th>FC Anotada</th>
+                <th>PSE Anotada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Aquecimento</td>
+                <td>2</td>
+                <td>60</td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
             </tr>
             <tr>
-                <td>Aquecimento (2 min)</td>
-                <td><input type="number" name="fc-warmup" /></td>
-                <td><input type="number" name="borg-warmup" /></td>
+                <td>Incremento 1</td>
+                <td>1</td>
+                <td>70</td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
             </tr>
             <tr>
-                <td>Cadência 1 (60 bpm, 1 min)</td>
-                <td><input type="number" name="fc-cad1" /></td>
-                <td><input type="number" name="borg-cad1" /></td>
+                <td>Incremento 2</td>
+                <td>1</td>
+                <td>80</td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
             </tr>
             <tr>
-                <td>Cadência 2 (70 bpm, 1 min)</td>
-                <td><input type="number" name="fc-cad2" /></td>
-                <td><input type="number" name="borg-cad2" /></td>
+                <td>Incremento 3</td>
+                <td>1</td>
+                <td>90</td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
             </tr>
             <tr>
-                <td>Cadência 3 (80 bpm, 1 min)</td>
-                <td><input type="number" name="fc-cad3" /></td>
-                <td><input type="number" name="borg-cad3" /></td>
+                <td>Resfriamento</td>
+                <td>2</td>
+                <td>60</td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
             </tr>
-            <tr>
-                <td>Cadência 4 (90 bpm, 1 min)</td>
-                <td><input type="number" name="fc-cad4" /></td>
-                <td><input type="number" name="borg-cad4" /></td>
-            </tr>
-            <tr>
-                <td>Resfriamento (1-2 min)</td>
-                <td><input type="number" name="fc-cooldown" /></td>
-                <td><input type="number" name="borg-cooldown" /></td>
-            </tr>
-        </table>
+        </tbody>
+    </table>
 
-        <!-- Botão de análise abaixo da tabela -->
-        <div>
-            <button id="analyzeButton" disabled>Analisar</button>
-        </div>
+    <!-- Botão para Analisar -->
+    <button id="analyzeButton">Analisar</button>
 
-        <!-- Resultados da análise ao lado -->
-        <div id="results" class="results-container">
-            <!-- Resultados da análise serão exibidos aqui -->
-        </div>
+    <!-- Tabela Detalhada (oculta até o preenchimento do preliminar) -->
+    <h2 id="detailed-header" style="display:none;">Tabela Detalhada</h2>
+    <table id="detailed-table" style="display:none;">
+        <thead>
+            <tr>
+                <th>Fase</th>
+                <th>FC Anotada</th>
+                <th>VO2 Estimado</th>
+                <th>PSE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Preenchido dinamicamente após análise -->
+        </tbody>
+    </table>
 
-        <footer>
-            <p>&copy; 2024 CARDIOSPORT</p>
-        </footer>
-    </div>
+    <!-- Botão para Imprimir -->
+    <button id="printButton" style="display:none;">Imprimir</button>
 
     <script src="script.js"></script>
 </body>
