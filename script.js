@@ -7,6 +7,7 @@ const startButton = document.getElementById("startButton");
 const pauseButton = document.getElementById("pauseButton");
 const analyzeButton = document.getElementById("analyzeButton");
 const timerDisplay = document.getElementById("timer");
+const resultsDiv = document.getElementById("results");
 
 startButton.addEventListener("click", function() {
     if (!isPaused) {
@@ -18,7 +19,6 @@ startButton.addEventListener("click", function() {
     analyzeButton.disabled = false;
     startButton.disabled = true;
     pauseButton.disabled = false;
-    document.body.style.backgroundColor = "#FFFFFF"; // Branco quando começa
 });
 
 pauseButton.addEventListener("click", function() {
@@ -27,7 +27,6 @@ pauseButton.addEventListener("click", function() {
     isPaused = true;
     startButton.disabled = false;
     pauseButton.disabled = true;
-    document.body.style.backgroundColor = "#FFEB3B"; // Amarelo para pausa
 });
 
 function updateTimer() {
@@ -45,7 +44,6 @@ function pad(unit) {
 
 analyzeButton.addEventListener("click", function() {
     clearInterval(timerInterval);
-    document.body.style.backgroundColor = "#4CAF50"; // Verde ao terminar
-    alert("Analisando os dados do protocolo...");
+    resultsDiv.innerHTML = "<p>Resultados da Análise: [Dados de FC e Borg aqui]</p>";
     // Aqui você pode adicionar a lógica de análise para o protocolo VO2-VT.
 });
