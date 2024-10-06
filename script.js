@@ -1,33 +1,41 @@
+let timerInterval;
+let seconds = 0;
+
+// Iniciar cronômetro
+document.getElementById('startButton').addEventListener('click', function() {
+    seconds = 0; // Resetar o cronômetro
+    timerInterval = setInterval(function() {
+        seconds++;
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        document.getElementById('timer').innerText = `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+        // Mudar cores conforme o tempo
+        if (minutes < 2) {
+            document.getElementById('timer').style.color = '#FF0000'; // Vermelho durante o aquecimento
+        } else {
+            document.getElementById('timer').style.color = '#00FF00'; // Verde ao final
+        }
+    }, 1000);
+});
+
+// Analisar dados da tabela preliminar
 document.getElementById('analyzeButton').addEventListener('click', function() {
-    // Coleta dos dados da Tabela Preliminar
     const rows = document.querySelectorAll('#preliminary-table tbody tr');
-    const detailedTable = document.querySelector('#detailed-table tbody');
-    const detailedHeader = document.getElementById('detailed-header');
-    const printButton = document.getElementById('printButton');
-
-    // Limpa a tabela detalhada
-    detailedTable.innerHTML = '';
-
+    
     rows.forEach((row, index) => {
         const fc = row.querySelectorAll('input')[0].value || 'N/A';
         const pse = row.querySelectorAll('input')[1].value || 'N/A';
-        
-        // Geração dinâmica de linhas da tabela detalhada
-        const newRow = `
-            <tr>
-                <td>${row.querySelector('td').innerText}</td>
-                <td>${fc}</td>
-                <td>${parseFloat(fc) + 10} (estimado)</td>
-                <td>${pse}</td>
-            </tr>`;
-        
-        detailedTable.innerHTML += newRow;
+
+        // Atualiza a tabela do Protocolo MMA
+        document.getElementById(`fc-aquecimento`).value = fc; // Exemplo para Aquecimento
+        document.getElementById(`pse-aquecimento`).value = pse; // Exemplo para Aquecimento
+
+        // Aqui, você pode adicionar lógica para preencher os campos correspondentes nas linhas corretas
     });
 
-    // Exibe a tabela detalhada e o botão de imprimir
-    detailedHeader.style.display = 'block';
-    detailedTable.parentElement.style.display = 'block';
-    printButton.style.display = 'inline-block';
+    // Exibir o botão de imprimir
+    document.getElementById('printButton').style.display = 'inline-block';
 });
 
 // Função para imprimir
