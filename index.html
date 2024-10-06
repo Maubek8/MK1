@@ -16,12 +16,34 @@
 
         <div id="timer-container">
             <p id="timer">00:00:00</p>
-            <button id="startButton">Iniciar Protocolo Preliminar</button>
+        </div>
+
+        <div style="margin-top: 80px;">
+            <button id="startButton">Iniciar Protocolo</button>
             <button id="pauseButton" disabled>Pausar</button>
+        </div>
+
+        <table>
+            <tr>
+                <th>Fase</th>
+                <th>Frequência Cardíaca (FC)</th>
+                <th>Percepção de Esforço (Borg)</th>
+            </tr>
+            <!-- Exemplo de linha que pode ser inserida dinamicamente -->
+            <tr>
+                <td>Warmup</td>
+                <td><input type="number" name="fc" /></td>
+                <td><input type="number" name="borg" /></td>
+            </tr>
+        </table>
+
+        <div>
             <button id="analyzeButton" disabled>Analisar</button>
         </div>
 
-        <!-- Adicionar aqui a tabela de inserção de dados e as mensagens solicitadas -->
+        <div id="results" style="margin-top: 20px;">
+            <!-- Aqui os resultados da análise serão exibidos -->
+        </div>
 
         <footer>
             <p>&copy; 2024 CARDIOSPORT</p>
