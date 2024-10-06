@@ -14,33 +14,53 @@
             <h1>CARDIOSPORT</h1>
         </header>
 
+        <!-- Cronômetro no canto superior esquerdo -->
         <div id="timer-container">
             <p id="timer">00:00:00</p>
         </div>
 
+        <!-- Botões para iniciar e pausar, acima da tabela -->
         <div style="margin-top: 80px;">
             <button id="startButton">Iniciar Protocolo</button>
             <button id="pauseButton" disabled>Pausar</button>
         </div>
 
+        <!-- Tabela de inserção de dados abaixo dos botões -->
         <table>
             <tr>
                 <th>Fase</th>
                 <th>Frequência Cardíaca (FC)</th>
                 <th>Percepção de Esforço (Borg)</th>
             </tr>
-            <!-- Exemplo de linha que pode ser inserida dinamicamente -->
+            <!-- Linhas da tabela para cada fase -->
             <tr>
                 <td>Warmup</td>
                 <td><input type="number" name="fc" /></td>
                 <td><input type="number" name="borg" /></td>
             </tr>
+            <tr>
+                <td>Incremento 1</td>
+                <td><input type="number" name="fc" /></td>
+                <td><input type="number" name="borg" /></td>
+            </tr>
+            <tr>
+                <td>Incremento 2</td>
+                <td><input type="number" name="fc" /></td>
+                <td><input type="number" name="borg" /></td>
+            </tr>
+            <tr>
+                <td>Cooldown</td>
+                <td><input type="number" name="fc" /></td>
+                <td><input type="number" name="borg" /></td>
+            </tr>
         </table>
 
+        <!-- Botão de análise abaixo da tabela -->
         <div>
             <button id="analyzeButton" disabled>Analisar</button>
         </div>
 
+        <!-- Resultados da análise ao lado, na área de resultado -->
         <div id="results" style="margin-top: 20px;">
             <!-- Aqui os resultados da análise serão exibidos -->
         </div>
