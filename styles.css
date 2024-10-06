@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #C7A000; /* amarelo escurecido */
+    background-color: #FFC107; /* amarelo âmbar */
     padding: 20px;
     text-align: center;
 }
@@ -36,14 +36,14 @@ button {
     padding: 10px 20px;
     margin: 5px;
     font-size: 16px;
-    background-color: #FFD300; /* amarelo brilhante */
+    background-color: #FFEB3B; /* amarelo limão */
     border: none;
     color: #000000; /* preto */
     cursor: pointer;
 }
 
 button:disabled {
-    background-color: #C7A000; /* amarelo escurecido */
+    background-color: #FFC107; /* amarelo âmbar */
     cursor: not-allowed;
 }
 
@@ -55,13 +55,13 @@ table {
 }
 
 th, td {
-    border: 1px solid #C7A000; /* amarelo escurecido */
+    border: 1px solid #FFC107; /* amarelo âmbar */
     padding: 8px;
     text-align: left;
 }
 
 footer {
-    background-color: #FFE733; /* amarelo claro */
+    background-color: #FFEB3B; /* amarelo limão */
     padding: 10px;
     position: fixed;
     width: 100%;
