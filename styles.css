@@ -1,88 +1,103 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #FFFFFF; /* fundo branco */
-    color: #000000; /* texto preto */
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Preliminar - VO2-VT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <img src="assets/logo.png" alt="Logo" class="logo">
+        <h1>CARDIOSPORT - Protocolo Preliminar</h1>
+    </header>
 
-/* Cabeçalho */
-header {
-    background-color: #FFC107; /* amarelo âmbar */
-    padding: 20px;
-    text-align: center;
-}
+    <!-- Informações do Atleta -->
+    <form id="athlete-info">
+        <label for="name">Nome do Atleta:</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="age">Idade:</label>
+        <input type="number" id="age" name="age">
+        
+        <label for="exam-date">Data do Exame:</label>
+        <input type="date" id="exam-date" name="exam-date">
+    </form>
 
-/* Imagem da logo */
-.logo {
-    width: 100px;
-}
+    <!-- Tabela Preliminar -->
+    <h2>Tabela Preliminar</h2>
+    <table id="preliminary-table">
+        <thead>
+            <tr>
+                <th>Fase</th>
+                <th>Tempo (min)</th>
+                <th>Cadência (bpm)</th>
+                <th>FC Anotada</th>
+                <th>PSE Anotada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Aquecimento</td>
+                <td>2</td>
+                <td>60</td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td>Incremento 1</td>
+                <td>1</td>
+                <td>70</td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td>Incremento 2</td>
+                <td>1</td>
+                <td>80</td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td>Incremento 3</td>
+                <td>1</td>
+                <td>90</td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td>Resfriamento</td>
+                <td>2</td>
+                <td>60</td>
+                <td><input type="number"></td>
+                <td><input type="number"></td>
+            </tr>
+        </tbody>
+    </table>
 
-/* Títulos */
-h1, h2 {
-    color: #000000; /* preto */
-}
+    <!-- Botão para Analisar -->
+    <button id="analyzeButton">Analisar</button>
 
-/* Posicionamento do cronômetro no canto superior esquerdo */
-#timer-container {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    color: #000000; /* preto */
-}
+    <!-- Tabela Detalhada (oculta até o preenchimento do preliminar) -->
+    <h2 id="detailed-header" style="display:none;">Tabela Detalhada</h2>
+    <table id="detailed-table" style="display:none;">
+        <thead>
+            <tr>
+                <th>Fase</th>
+                <th>FC Anotada</th>
+                <th>VO2 Estimado</th>
+                <th>PSE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Preenchido dinamicamente após análise -->
+        </tbody>
+    </table>
 
-/* Estilo dos botões */
-#control-buttons {
-    margin-top: 100px;
-}
+    <!-- Botão para Imprimir -->
+    <button id="printButton" style="display:none;">Imprimir</button>
 
-button {
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 16px;
-    background-color: #FFEB3B; /* amarelo limão */
-    border: none;
-    color: #000000; /* preto */
-    cursor: pointer;
-}
-
-/* Botão desabilitado */
-button:disabled {
-    background-color: #C7A000; /* amarelo escurecido */
-    cursor: not-allowed;
-}
-
-/* Estilo da tabela */
-table {
-    background-color: #FFFFFF; /* fundo branco */
-    border-collapse: collapse;
-    width: 60%;
-    margin-top: 20px;
-}
-
-/* Bordas da tabela */
-th, td {
-    border: 1px solid #FFC107; /* amarelo âmbar */
-    padding: 8px;
-    text-align: left;
-}
-
-/* Estilo da área de resultados */
-.results-container {
-    float: right;
-    width: 30%;
-    background-color: #FFFFFF;
-    border: 1px solid #FFC107;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-/* Rodapé */
-footer {
-    background-color: #FFEB3B; /* amarelo limão */
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
+    <script src="script.js"></script>
+</body>
+</html>
