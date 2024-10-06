@@ -44,6 +44,17 @@ function pad(unit) {
 
 analyzeButton.addEventListener("click", function() {
     clearInterval(timerInterval);
-    resultsDiv.innerHTML = "<p>Resultados da Análise: [Dados de FC e Borg aqui]</p>";
-    // Aqui você pode adicionar a lógica de análise para o protocolo VO2-VT.
+
+    // Coletar os valores da tabela
+    const fcInputs = document.querySelectorAll('input[name="fc"]');
+    const borgInputs = document.querySelectorAll('input[name="borg"]');
+
+    // Exibir os resultados ao lado
+    resultsDiv.innerHTML = "<h3>Resultados da Análise</h3><ul>";
+    for (let i = 0; i < fcInputs.length; i++) {
+        const fcValue = fcInputs[i].value || 'N/A';
+        const borgValue = borgInputs[i].value || 'N/A';
+        resultsDiv.innerHTML += `<li>Fase ${i + 1}: FC: ${fcValue}, Borg: ${borgValue}</li>`;
+    }
+    resultsDiv.innerHTML += "</ul>";
 });
