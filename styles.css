@@ -1,103 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protocolo Preliminar - VO2-VT</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Cabeçalho -->
-    <header>
-        <img src="assets/logo.png" alt="Logo" class="logo">
-        <h1>CARDIOSPORT - Protocolo Preliminar</h1>
-    </header>
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
 
-    <!-- Informações do Atleta -->
-    <form id="athlete-info">
-        <label for="name">Nome do Atleta:</label>
-        <input type="text" id="name" name="name">
-        
-        <label for="age">Idade:</label>
-        <input type="number" id="age" name="age">
-        
-        <label for="exam-date">Data do Exame:</label>
-        <input type="date" id="exam-date" name="exam-date">
-    </form>
+/* Cabeçalho */
+header {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+}
 
-    <!-- Tabela Preliminar -->
-    <h2>Tabela Preliminar</h2>
-    <table id="preliminary-table">
-        <thead>
-            <tr>
-                <th>Fase</th>
-                <th>Tempo (min)</th>
-                <th>Cadência (bpm)</th>
-                <th>FC Anotada</th>
-                <th>PSE Anotada</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Aquecimento</td>
-                <td>2</td>
-                <td>60</td>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-            </tr>
-            <tr>
-                <td>Incremento 1</td>
-                <td>1</td>
-                <td>70</td>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-            </tr>
-            <tr>
-                <td>Incremento 2</td>
-                <td>1</td>
-                <td>80</td>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-            </tr>
-            <tr>
-                <td>Incremento 3</td>
-                <td>1</td>
-                <td>90</td>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-            </tr>
-            <tr>
-                <td>Resfriamento</td>
-                <td>2</td>
-                <td>60</td>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-            </tr>
-        </tbody>
-    </table>
+header h1 {
+    color: #FFCC00;
+    font-size: 24px;
+}
 
-    <!-- Botão para Analisar -->
-    <button id="analyzeButton">Analisar</button>
+header .logo {
+    width: 100px;
+    margin-bottom: 10px;
+}
 
-    <!-- Tabela Detalhada (oculta até o preenchimento do preliminar) -->
-    <h2 id="detailed-header" style="display:none;">Tabela Detalhada</h2>
-    <table id="detailed-table" style="display:none;">
-        <thead>
-            <tr>
-                <th>Fase</th>
-                <th>FC Anotada</th>
-                <th>VO2 Estimado</th>
-                <th>PSE</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Preenchido dinamicamente após análise -->
-        </tbody>
-    </table>
+/* Formulário de Informações do Atleta */
+form#athlete-info {
+    padding: 20px;
+    background-color: #F7F7F7;
+    border: 1px solid #E0E0E0;
+    margin: 20px auto;
+    max-width: 600px;
+}
 
-    <!-- Botão para Imprimir -->
-    <button id="printButton" style="display:none;">Imprimir</button>
+form#athlete-info label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #000000;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+form#athlete-info input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 10px;
+}
+
+/* Tabelas */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #F7F7F7;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #FFFFFF;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #E0E0E0;
+    text-align: center;
+}
+
+/* Botões */
+button {
+    background-color: #FFCC00;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #E6B800;
+}
+
+button:disabled {
+    background-color: #F7F7F7;
+    color: #A0A0A0;
+    cursor: not-allowed;
+}
+
+/* Cronômetro */
+#timer-container {
+    text-align: center;
+    margin: 20px;
+}
+
+#timer {
+    font-size: 24px;
+    color: #FF0000; /* Cor inicial do cronômetro */
+}
+
+/* Rodapé (Footer) */
+footer {
+    background-color: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
