@@ -16,39 +16,46 @@ header {
 
 header h1 {
     color: #FFCC00;
-    font-size: 24px;
+    font-size: 28px;
 }
 
-header .logo {
+header img.logo {
     width: 100px;
-    margin-bottom: 10px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
-/* Formulário de Informações do Atleta */
+/* Formulário */
 form#athlete-info {
     padding: 20px;
     background-color: #F7F7F7;
     border: 1px solid #E0E0E0;
     margin: 20px auto;
     max-width: 600px;
+    border-radius: 8px;
 }
 
-form#athlete-info label {
-    display: block;
-    margin: 10px 0 5px;
-    color: #000000;
+/* Cronômetro */
+#timer-container {
+    text-align: center;
+    margin: 20px;
+    font-size: 36px;
+    color: #FF0000; /* Cor padrão do cronômetro */
 }
 
-form#athlete-info input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #E0E0E0;
-    margin-bottom: 10px;
+/* Mensagem de fase */
+#phase-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FF0000;
+    text-align: center;
+    margin-top: 10px;
+    display: none;
 }
 
 /* Tabelas */
 table {
-    width: 80%;
+    width: 90%;
     margin: 20px auto;
     border-collapse: collapse;
 }
@@ -72,58 +79,31 @@ td, th {
     text-align: center;
 }
 
+/* Ajustar a largura das colunas */
+table th, table td {
+    padding: 8px;
+    width: 100px; /* Ajustar a largura para caber melhor */
+}
+
 /* Botões */
 button {
     background-color: #FFCC00;
     color: #000000;
     border: none;
     padding: 10px 20px;
-    margin: 20px;
+    margin: 10px;
     cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #E6B800;
 }
 
+/* Botão desabilitado */
 button:disabled {
     background-color: #F7F7F7;
     color: #A0A0A0;
     cursor: not-allowed;
-}
-
-/* Cronômetro */
-#timer-container {
-    text-align: center;
-    margin: 20px;
-}
-
-#timer {
-    font-size: 24px;
-    color: #FF0000; /* Cor inicial do cronômetro */
-}
-
-/* Pop-Up do Gráfico */
-#graph-popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    border: 1px solid #E0E0E0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Para garantir que fique em cima de outros elementos */
-    padding: 20px;
-}
-
-/* Rodapé (Footer) */
-footer {
-    background-color: #000000;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
