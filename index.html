@@ -3,105 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protocolo Preliminar - VO2-VT</title>
+    <title>Protocolo Preliminar - Atleta MMA</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <img src="assets/logo.png" alt="Logo" class="logo">
-        <h1>CARDIOSPORT - Protocolo Preliminar</h1>
+        <h1>Protocolo Preliminar - Atleta MMA</h1>
     </header>
 
     <!-- Informações do Atleta -->
     <form id="athlete-info">
-        <label for="name">Nome do Atleta:</label>
-        <input type="text" id="name" name="name">
-        
-        <label for="age">Idade:</label>
-        <input type="number" id="age" name="age">
-        
-        <label for="exam-date">Data do Exame:</label>
-        <input type="date" id="exam-date" name="exam-date">
+        <label for="age">Idade do Atleta:</label>
+        <input type="number" id="age" name="age" value="29" required>
     </form>
 
-    <!-- Tabela Preliminar -->
-    <h2>Tabela Preliminar</h2>
-    <table id="preliminary-table">
+    <!-- Cronômetro -->
+    <div id="timer-container">
+        <p id="timer">00:00:00</p>
+        <p id="phase-message" style="display: none;"></p> <!-- Mensagem de fase atual e avisos -->
+        <button id="startButton">Iniciar Protocolo</button>
+        <button id="analyzeButton">Analisar</button>
+        <button id="printButton" style="display:none;">Imprimir Protocolo</button>
+    </div>
+
+    <h2>Tabela de Coleta de Dados - Protocolo Preliminar</h2>
+    <table id="preliminar-table">
         <thead>
             <tr>
                 <th>Fase</th>
                 <th>Tempo (min)</th>
                 <th>Cadência (bpm)</th>
-                <th>FC Anotada</th>
-                <th>PSE Anotada</th>
-                <th>FC Esperada (bpm)</th>
-                <th>PSE Esperada (Escala de Borg)</th>
+                <th>% FC Máx</th>
+                <th>FC Estimada</th>
+                <th>FC Inserida</th>
+                <th>PA Inserida (mmHg)</th>
+                <th>SO2% Inserida</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>Aquecimento</td>
-                <td style="text-align: center;">2</td>
-                <td style="text-align: center;">60</td>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-                <td>95-115</td>
-                <td>6-10 (Leve)</td>
+                <td>2</td>
+                <td><input type="number" value="60" id="cadencia-aquecimento"></td>
+                <td>50-60%</td>
+                <td id="fc-estimada-aquecimento">100-120</td>
+                <td><input type="number" id="fc-aquecimento"></td>
+                <td><input type="number" id="pa-aquecimento"></td>
+                <td><input type="number" id="so2-aquecimento"></td>
             </tr>
             <tr>
                 <td>Incremento 1</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center;">70</td>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-                <td>115-135</td>
-                <td>11-13 (Moderado)</td>
+                <td>1</td>
+                <td><input type="number" value="70" id="cadencia-incremento1"></td>
+                <td>60-70%</td>
+                <td id="fc-estimada-incremento1">120-140</td>
+                <td><input type="number" id="fc-incremento1"></td>
+                <td><input type="number" id="pa-incremento1"></td>
+                <td><input type="number" id="so2-incremento1"></td>
             </tr>
             <tr>
                 <td>Incremento 2</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center;">80</td>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-                <td>135-153</td>
-                <td>13-14 (Algo Difícil)</td>
+                <td>1</td>
+                <td><input type="number" value="80" id="cadencia-incremento2"></td>
+                <td>70-80%</td>
+                <td id="fc-estimada-incremento2">140-160</td>
+                <td><input type="number" id="fc-incremento2"></td>
+                <td><input type="number" id="pa-incremento2"></td>
+                <td><input type="number" id="so2-incremento2"></td>
             </tr>
             <tr>
                 <td>Incremento 3</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center;">90</td>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-                <td>153-162</td>
-                <td>15-16 (Difícil)</td>
+                <td>1</td>
+                <td><input type="number" value="90" id="cadencia-incremento3"></td>
+                <td>80-90%</td>
+                <td id="fc-estimada-incremento3">160-180</td>
+                <td><input type="number" id="fc-incremento3"></td>
+                <td><input type="number" id="pa-incremento3"></td>
+                <td><input type="number" id="so2-incremento3"></td>
             </tr>
             <tr>
                 <td>Resfriamento</td>
-                <td style="text-align: center;">2</td>
-                <td style="text-align: center;">60</td>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-                <td>115-135</td>
-                <td>9-10 (Leve)</td>
+                <td>2</td>
+                <td><input type="number" value="60" id="cadencia-resfriamento"></td>
+                <td>50-60%</td>
+                <td id="fc-estimada-resfriamento">100-120</td>
+                <td><input type="number" id="fc-resfriamento"></td>
+                <td><input type="number" id="pa-resfriamento"></td>
+                <td><input type="number" id="so2-resfriamento"></td>
             </tr>
         </tbody>
     </table>
 
-    <!-- Cronômetro e Botões -->
-    <div id="timer-container" style="text-align: center; margin: 20px;">
-        <p id="timer">00:00</p>
-        <button id="startButton">Iniciar Protocolo Preliminar</button>
-        <button id="analyzeButton">Analisar</button>
-        <button id="printButton" style="display:none;">Imprimir Protocolo</button>
-    </div>
-
-    <!-- Tabela do Protocolo MK - Atleta MMA -->
-    <h2>Tabela do Protocolo MK - Atleta MMA</h2>
-    <table id="mma-table">
-        <thead>
-            <tr>
-                <th>Fase</th>
-                <th>Tempo (min)</th>
-                <th>Cadência (bpm)</th>
-                <th>FC Anotada</th>
-                <th>PSE
+    <script src="script.js"></script>
+</body>
+</html>
